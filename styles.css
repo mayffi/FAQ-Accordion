@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "lato", sans-serif;
+}
+body {
+  background: url(images/pexels-dương-nhân-12858127.jpg) no-repeat center
+    center/ cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /*The element is equal to 100% of the viewport*/
+}
+
+.accordion {
+  width: 65%;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  /* max-height: 65%;
+  overflow: auto; */
+}
+
+.accordion .accordion-title {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.accordion .content-container .question {
+  padding: 18px 0px;
+  font-size: 1.37rem;
+  cursor: pointer;
+  border-bottom: 1px solid #000;
+  position: relative;
+}
+
+.accordion .content-container .question::after {
+  content: "+";
+  position: absolute;
+  right: -5px;
+}
+
+.accordion .content-container .answer {
+  padding-top: 15px;
+  line-height: 1;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+/*Javascript styling link*/
+.accordion .content-container.active .answer {
+  height: 150px;
+} /* When the question is clicked the height of the answer 
+will be 150px*/
+
+.accordion .content-container.active .question {
+  font-size: 1.2rem;
+  transition: 0.5s;
+}
+
+.accordion .content-container.active .question::after {
+  content: "-";
+  transition: 0.5s;
+  font-size: 30px;
+}
